@@ -1,8 +1,8 @@
 pipeline {
 
   environment {
-    registry = "34.70.204.122:5000/mgsgoms/flask"
-    registry_mysql = "34.70.204.122:5000/mgsgoms/mysql"
+    registry = "34.70.29.93:5000/mgsgoms/flask"
+    registry_mysql = "34.70.29.93:5000/mgsgoms/mysql"
     dockerImage = ""
   }
 
@@ -42,8 +42,8 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-       sh 'docker build -t "34.70.204.122:5000/mgsgoms/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "34.70.204.122:5000/mgsgoms/mysql:$BUILD_NUMBER"'
+       sh 'docker build -t "34.70.29.93:5000/mgsgoms/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "34.70.29.93:5000/mgsgoms/mysql:$BUILD_NUMBER"'
         }
       }
     stage('Deploy App') {
